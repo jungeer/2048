@@ -122,3 +122,26 @@ button:active {
         3px 3px 6px #cccccc,
         -3px -3px 6px #ffffff;
 }
+
+/* 新增：针对小屏幕设备的样式 */
+@media (max-width: 600px) {
+    .tile {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    #score, #best-score {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+}

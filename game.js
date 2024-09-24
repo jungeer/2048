@@ -133,12 +133,20 @@ class Game {
         gameBoard.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
+            e.preventDefault(); // 防止页面滚动
+        });
+
+        gameBoard.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+            endY = e.touches[0].clientY;
+            e.preventDefault(); // 防止页面滚动
         });
 
         gameBoard.addEventListener('touchend', (e) => {
             endX = e.changedTouches[0].clientX;
             endY = e.changedTouches[0].clientY;
             this.handleSwipe(startX, startY, endX, endY);
+            e.preventDefault(); // 防止页面滚动
         });
     }
 
@@ -162,5 +170,4 @@ class Game {
 
 // Start the game
 const game = new Game();
-game.start();
 game.start();
